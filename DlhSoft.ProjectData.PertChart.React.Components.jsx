@@ -6,8 +6,8 @@ function PertChartView(props) {
         DlhSoft.Controls.Pert.PertChartView.initialize(document.getElementById(id), props.items, props.settings, props.license);
         if (props.change) {
             props.settings.itemPropertyChangeHandler = function(item, propertyName, isDirect, isFinal) {
-            if (changeHandler)
-                changeHandler(item, propertyName, isDirect, isFinal);
+                if (changeHandler)
+                    changeHandler(item, propertyName, isDirect, isFinal);
                 props.change(item, propertyName, isDirect, isFinal);
             }
         }
@@ -23,8 +23,8 @@ function NetworkDiagramView(props) {
         DlhSoft.Controls.Pert.NetworkDiagramView.initialize(document.getElementById(id), props.items, props.settings, props.license);
         if (props.change) {
             props.settings.itemPropertyChangeHandler = function(item, propertyName, isDirect, isFinal) {
-            if (changeHandler)
-                changeHandler(item, propertyName, isDirect, isFinal);
+                if (changeHandler)
+                    changeHandler(item, propertyName, isDirect, isFinal);
                 props.change(item, propertyName, isDirect, isFinal);
             }
         }
