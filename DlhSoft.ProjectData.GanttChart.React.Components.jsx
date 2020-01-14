@@ -6,8 +6,8 @@ function GanttChartView(props) {
         DlhSoft.Controls.GanttChartView.initialize(document.getElementById(id), props.items, props.settings, props.license);
         if (props.change) {
             props.settings.itemPropertyChangeHandler = function(item, propertyName, isDirect, isFinal) {
-            if (changeHandler)
-                changeHandler(item, propertyName, isDirect, isFinal);
+                if (changeHandler)
+                    changeHandler(item, propertyName, isDirect, isFinal);
                 props.change(item, propertyName, isDirect, isFinal);
             }
         }
@@ -23,8 +23,8 @@ function ScheduleChartView(props) {
         DlhSoft.Controls.ScheduleChartView.initialize(document.getElementById(id), props.items, props.settings, props.license);
         if (props.change) {
             props.settings.itemPropertyChangeHandler = function(item, propertyName, isDirect, isFinal) {
-            if (changeHandler)
-                changeHandler(item, propertyName, isDirect, isFinal);
+                if (changeHandler)
+                    changeHandler(item, propertyName, isDirect, isFinal);
                 props.change(item, propertyName, isDirect, isFinal);
             }
         }
@@ -40,8 +40,8 @@ function LoadChartView(props) {
         DlhSoft.Controls.LoadChartView.initialize(document.getElementById(id), props.items, props.settings, props.license);
         if (props.change) {
             props.settings.itemPropertyChangeHandler = function(item, propertyName, isDirect, isFinal) {
-            if (changeHandler)
-                changeHandler(item, propertyName, isDirect, isFinal);
+                if (changeHandler)
+                    changeHandler(item, propertyName, isDirect, isFinal);
                 props.change(item, propertyName, isDirect, isFinal);
             }
         }
