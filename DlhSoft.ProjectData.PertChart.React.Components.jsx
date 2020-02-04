@@ -1,9 +1,9 @@
-function PertChartView(props) {
-    var id, idc = 0; do { id = "pertChartView" + new Date().getTime() + idc++; } while (document.getElementById(id));
-    var element = <div id={id} style={props.style}> {props.children}</div>;
+var PertChartView = React.forwardRef(function(props, ref) {
+    if (!ref) ref = React.createRef();
+    var element = <div ref={ref} style={props.style}>{props.children}</div>;
     var changeHandler = props.settings.itemPropertyChangeHandler;
     setTimeout(function() {
-        DlhSoft.Controls.Pert.PertChartView.initialize(document.getElementById(id), props.items, props.settings, props.license);
+        DlhSoft.Controls.Pert.PertChartView.initialize(ref.current, props.items, props.settings, props.license);
         if (props.change) {
             props.settings.itemPropertyChangeHandler = function(item, propertyName, isDirect, isFinal) {
                 if (changeHandler)
@@ -13,14 +13,14 @@ function PertChartView(props) {
         }
     });
     return element;
-}
+});
 
-function NetworkDiagramView(props) {
-    var id, idc = 0; do { id = "networkDiagramView" + new Date().getTime() + idc++; } while (document.getElementById(id));
-    var element = <div id={id} style={props.style}> {props.children}</div>;
+var PertChartView = React.forwardRef(function(props, ref) {
+    if (!ref) ref = React.createRef();
+    var element = <div ref={ref} style={props.style}>{props.children}</div>;
     var changeHandler = props.settings.itemPropertyChangeHandler;
     setTimeout(function() {
-        DlhSoft.Controls.Pert.NetworkDiagramView.initialize(document.getElementById(id), props.items, props.settings, props.license);
+        DlhSoft.Controls.Pert.NetworkDiagramView.initialize(ref.current, props.items, props.settings, props.license);
         if (props.change) {
             props.settings.itemPropertyChangeHandler = function(item, propertyName, isDirect, isFinal) {
                 if (changeHandler)
@@ -30,4 +30,4 @@ function NetworkDiagramView(props) {
         }
     });
     return element;
-}
+});
