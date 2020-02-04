@@ -1,9 +1,9 @@
-function GanttChartView(props) {
-    var id, idc = 0; do { id = "ganttChartView" + new Date().getTime() + idc++; } while (document.getElementById(id));
-    var element = <div id={id} style={props.style}> {props.children}</div>;
+var GanttChartView = React.forwardRef(function(props, ref) {
+    if (!ref) ref = React.createRef();
+    var element = <div ref={ref} style={props.style}>{props.children}</div>;
     var changeHandler = props.settings.itemPropertyChangeHandler;
     setTimeout(function() {
-        DlhSoft.Controls.GanttChartView.initialize(document.getElementById(id), props.items, props.settings, props.license);
+        DlhSoft.Controls.GanttChartView.initialize(ref.current, props.items, props.settings, props.license);
         if (props.change) {
             props.settings.itemPropertyChangeHandler = function(item, propertyName, isDirect, isFinal) {
                 if (changeHandler)
@@ -13,14 +13,14 @@ function GanttChartView(props) {
         }
     });
     return element;
-}
+});
 
-function ScheduleChartView(props) {
-    var id, idc = 0; do { id = "scheduleChartView" + new Date().getTime() + idc++; } while (document.getElementById(id));
-    var element = <div id={id} style={props.style}> {props.children}</div>;
+var ScheduleChartView = React.forwardRef(function(props, ref) {
+    if (!ref) ref = React.createRef();
+    var element = <div ref={ref} style={props.style}>{props.children}</div>;
     var changeHandler = props.settings.itemPropertyChangeHandler;
     setTimeout(function() {
-        DlhSoft.Controls.ScheduleChartView.initialize(document.getElementById(id), props.items, props.settings, props.license);
+        DlhSoft.Controls.ScheduleChartView.initialize(ref.current, props.items, props.settings, props.license);
         if (props.change) {
             props.settings.itemPropertyChangeHandler = function(item, propertyName, isDirect, isFinal) {
                 if (changeHandler)
@@ -30,14 +30,14 @@ function ScheduleChartView(props) {
         }
     });
     return element;
-}
+});
 
-function LoadChartView(props) {
-    var id, idc = 0; do { id = "loadChartView" + new Date().getTime() + idc++; } while (document.getElementById(id));
-    var element = <div id={id} style={props.style}> {props.children}</div>;
+var LoadChartView = React.forwardRef(function(props, ref) {
+    if (!ref) ref = React.createRef();
+    var element = <div ref={ref} style={props.style}>{props.children}</div>;
     var changeHandler = props.settings.itemPropertyChangeHandler;
     setTimeout(function() {
-        DlhSoft.Controls.LoadChartView.initialize(document.getElementById(id), props.items, props.settings, props.license);
+        DlhSoft.Controls.LoadChartView.initialize(ref.current, props.items, props.settings, props.license);
         if (props.change) {
             props.settings.itemPropertyChangeHandler = function(item, propertyName, isDirect, isFinal) {
                 if (changeHandler)
@@ -47,4 +47,4 @@ function LoadChartView(props) {
         }
     });
     return element;
-}
+});
