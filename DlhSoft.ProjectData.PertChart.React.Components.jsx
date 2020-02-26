@@ -15,7 +15,7 @@ var PertChartView = React.forwardRef(function(props, ref) {
     return element;
 });
 
-var PertChartView = React.forwardRef(function(props, ref) {
+var NetworkDiagramView = React.forwardRef(function(props, ref) {
     if (!ref) ref = React.createRef();
     var element = <div ref={ref} style={props.style}>{props.children}</div>;
     var changeHandler = props.settings.itemPropertyChangeHandler;
